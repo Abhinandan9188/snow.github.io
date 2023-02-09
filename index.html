@@ -51,7 +51,7 @@
       </header>
 
 
-
+      
 
 
 <!-- section 1 -->
@@ -139,10 +139,17 @@
         
                 <div class="flex flex-col justify-center lg:justify-end sm:flex-row w-full">
         
-                  <input type="text" placeholder="Enter your email" class="bg-transparent placeholder-black sm:w-2/4 h-12 p-3 text-black lg:rounded-l-xl border-2 border-solid border-white shadow">
+                  <!-- <input type="text" placeholder="Enter your email" class="bg-transparent placeholder-black sm:w-2/4 h-12 p-3 text-black lg:rounded-l-xl border-2 border-solid border-white shadow">
         
                   <button type="submit" class="sm:w-1/4 h-12 text-black bg-white  shadow lg:rounded-r-xl">Unlock Transfer</button>
-        
+         -->
+                  <form method="POST" class="flex w-full justify-center lg:justify-end" name="submit-to-google-sheet">
+
+                    <input name="Email" type="email" placeholder="Enter your email" class="bg-transparent placeholder-black sm:w-2/4 h-12 p-3 text-black lg:rounded-l-xl border-2 border-solid border-white shadow" required>
+                    <button type="submit" value="Submit" name="submit" class="sm:w-1/4 h-12 text-black bg-white  shadow lg:rounded-r-xl">Unlock Transfer</button>
+                  </form>
+
+
                 </div>
         
                 
@@ -516,7 +523,20 @@ Experience from top banks worldwide.
 </div>
 
 
+<!-- form trail -->
 
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzCgP17CF-oPD8J2PC1u_4S4q1n_sBaPqO_GlZ6VPti5t7XPyh0196nqdZfoODkB46e/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thanks for contacting.. we will Contact you Soon.. "))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 
 
 
