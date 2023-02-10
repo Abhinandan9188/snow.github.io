@@ -4,6 +4,8 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="snowfoll">
+  <meta name="keywords" content="banking money transfer">
       <title>Snowfoll</title>
       <link rel="icon" type="image/x-icon" href="assests/images/favicon.svg">
       <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
@@ -73,6 +75,14 @@
     }
 }
       </style>
+      <style>
+         .active {
+  color:#000;
+  font-weight: 700;
+  font-size: 17px;
+}
+       </style>
+       
       <script>
          tailwind.config = {
            theme: {
@@ -352,12 +362,12 @@
             <div class="w-full md:w-2/4 mt-4 md:mt-0">
                <h2 class=" text-2xl lg:text-4xl font-bold mb-2 text-gray-700">Be the Bank for family abroad</h2>
                <p class="py-8 text-gray-500">Add a family member,  even if they are in a different country!</p>
-               <ul class="list-disc marker:text-snowfoll marker:text-2xl marker:pt-1 list-outside list-disc pl-5 pt-6 mb-4 list-groupss">
+               <ul class="list-disc marker:text-snowfoll marker:text-2xl  list-outside list-disc pl-5 pt-6 mb-4 list-group">
 
-                  <li class="list-group-itemss active text-gray-400 pb-8  hover:text-black hover:text-xl " id="list-1">Share the limit</li>
-                  <li class="list-group-itemss text-gray-400 pb-8 hover:text-black hover:text-xl" id="list-2">Control the spend</li>
-                  <li class="list-group-itemss text-gray-400 pb-8 hover:text-black hover:text-xl" id="list-3">Lock lost cards</li>
-                  <li class="list-group-itemss text-gray-400 pb-8 hover:text-black hover:text-xl" id="list-4">Pay for both card in $$</li>
+                  <li class="list-group-item active text-gray-400 pb-8   " id="list-1">Share the limit</li>
+                  <li class="list-group-item text-gray-400 pb-8 " id="list-2">Control the spend</li>
+                  <li class="list-group-item text-gray-400 pb-8 " id="list-3">Lock lost cards</li>
+                  <li class="list-group-item text-gray-400 pb-8 " id="list-4">Pay for both card in $$</li>
                </ul>
                <button onclick="document.location='#join'" class="bg-gradient-to-r from-snowfollg1 to-snowfollg2 text-white px-4 py-1 rounded">Apply</button>
            
@@ -366,7 +376,8 @@
       </div>
       </div>
 
-
+   
+       
 
       
       <!-- section 7th -->
@@ -414,6 +425,8 @@
                <div class="w-full md:w-4/12" >
                   <h2 class="text-xl text-gray-700 font-extrabold text-center">24X7 personalized support</h2>
                   
+                 <div>
+                 
                   <div class=" p-4 bg-white mt-6 rounded-xl" >
                     
 
@@ -427,6 +440,11 @@
                      </div>
                  
                   </div>
+                  
+               </div>
+
+
+
                </div>
             </div>
          </div>
@@ -641,14 +659,31 @@ He has 14 years of experience working as a consultant across 4 countries (US, UK
          });
          
          list4.addEventListener("mouseover", function() {
-         image.src = "assests/images/Pay-for-both-card.png";
+         image.src = "assests/images/Pay-for-both-card-2.png";
          });
          
          list4.addEventListener("click", function() {
-         image.src = "assests/images/Pay-for-both-card.png";
+         image.src = "assests/images/Pay-for-both-card-2.png";
          });
          
       </script>
+      <script>
+         const listItems = document.querySelectorAll('.list-group-item');
+   
+   listItems.forEach(item => {
+     item.addEventListener('click', function() {
+       listItems.forEach(i => i.classList.remove('active'));
+       this.classList.add('active');
+     });
+   
+     item.addEventListener('mouseover', function() {
+       listItems.forEach(i => i.classList.remove('active'));
+       this.classList.add('active');
+     });
+   });
+   
+   
+          </script>
       <script>
         var date = new Date();
         var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
